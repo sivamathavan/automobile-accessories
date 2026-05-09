@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoRefine Coimbatore | Premium Car Detailing & Accessories</title>
+    <meta name="description" content="Coimbatore's premier car detailing, PPF, and ceramic coating studio. High-end car accessories, seat covers, and audio systems. AutoRefine - Your Car Deserves the Best.">
+    <meta name="keywords" content="Car Detailing Coimbatore, Auto Accessories Coimbatore, Ceramic Coating Coimbatore, Car PPF Coimbatore, Car Seat Covers Coimbatore, Car Audio Store Tamil Nadu">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <style>
+        :root {
+            --dark: #1A1A1A;
+            --grey: #2C2C2C;
+            --blue: #0066CC;
+            --blue-light: #3399FF;
+            --white: #FFFFFF;
+            --text-muted: #A0A0A0;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1, h2, h3, h4, .bold {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid var(--blue);
+        }
+
+        .logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-text {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .logo-text span { color: var(--blue); }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--blue); }
+
+        .cta-btn {
+            background: var(--blue);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover { background: var(--white); color: var(--blue); }
+
+        /* --- Hero --- */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 8%;
+        }
+
+        .hero-content { max-width: 900px; }
+        .hero-content h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1.5rem; line-height: 1.1; }
+        .hero-content p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        /* --- Services Strip --- */
+        .services-strip {
+            background: var(--grey);
+            padding: 4rem 8%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            border-bottom: 4px solid var(--blue);
+        }
+
+        .service-mini { color: var(--white); transition: var(--transition); }
+        .service-mini i { font-size: 2.5rem; color: var(--blue); margin-bottom: 1rem; display: block; }
+        .service-mini h4 { font-size: 0.9rem; letter-spacing: 1px; }
+
+        /* --- Sections --- */
+        section { padding: 8rem 8%; }
+        .section-title { text-align: center; margin-bottom: 5rem; }
+        .section-title h2 { font-size: 3rem; color: var(--dark); margin-bottom: 1rem; }
+        .section-title .line { width: 80px; height: 5px; background: var(--blue); margin: 0 auto; }
+
+        /* --- Before & After Slider --- */
+        .ba-slider {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            cursor: ew-resize;
+            margin: 2rem 0;
+        }
+
+        .ba-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .ba-before {
+            background-image: url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1200&auto=format&fit=crop');
+        }
+
+        .ba-after {
+            background-image: url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1200&auto=format&fit=crop');
+            width: 50%;
+            z-index: 2;
+            border-right: 4px solid var(--blue);
+        }
+
+        .ba-handle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: var(--blue);
+            z-index: 3;
+            pointer-events: none;
+            transform: translateX(-50%);
+        }
+
+        .ba-handle::after {
+            content: "\f273"; /* Ph arrows icon */
+            font-family: "Phosphor";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: var(--blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 0 20px rgba(0,102,204,0.5);
+        }
+
+        /* --- Scroll Reveal --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Products/Services Grid --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid #eee;
+            transition: var(--transition);
+            overflow: hidden;
+        }
+
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .card-img { height: 280px; overflow: hidden; position: relative; }
+        .card-img img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .card:hover .card-img img { transform: scale(1.1); }
+        
+        .card-info { padding: 2.5rem; }
+        .card-info h3 { margin-bottom: 1rem; font-size: 1.4rem; color: var(--dark); }
+        .card-info p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem; }
+
+        /* --- WhatsApp Float --- */
+        .wa-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            z-index: 10000;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .wa-float:hover { transform: scale(1.1) rotate(10deg); }
+
+        /* --- Gallery --- */
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 2rem;
+            background: var(--grey);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover { background: var(--blue); }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 8rem 8% 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 4rem;
+            margin-bottom: 5rem;
+        }
+
+        .footer-col h4 { color: var(--blue); margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 1rem; opacity: 0.7; font-size: 0.9rem; }
+        .footer-col ul li a { color: var(--white); text-decoration: none; transition: var(--transition); }
+        .footer-col ul li a:hover { color: var(--blue); }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        /* --- Page Management --- */
+        .page { display: none; }
+        .page.active { display: block; }
+
+        @media (max-width: 968px) {
+            .nav-links { display: none; }
+            .ba-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/919000000000" class="wa-float">
+        <i class="ph ph-whatsapp-logo"></i>
+    </a>
+
+    <!-- Nav -->
+    <nav>
+        <a href="#" class="logo" onclick="showPage('home')">
+            <div class="logo-text">AUTO<span>REFINE</span></div>
+        </a>
+        <div class="nav-links">
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('services')">Detailing Services</a>
+            <a href="#" onclick="showPage('products')">Accessories</a>
+            <a href="#" onclick="showPage('gallery')">Work Gallery</a>
+            <a href="#" onclick="showPage('contact')">Contact Us</a>
+        </div>
+        <a href="#contact" class="cta-btn" onclick="showPage('contact')">Book Service</a>
+    </nav>
+
+    <!-- --- HOME PAGE --- -->
+    <main id="home-page" class="page active">
+        <header id="hero">
+            <div class="hero-content">
+                <h1>Give Your Car the Treatment It Deserves.</h1>
+                <p>Coimbatore's most advanced car detailing studio. From Ceramic Coatings to Premium Accessories, we redefine automotive excellence.</p>
+                <div style="display: flex; gap: 1.5rem; justify-content: center;">
+                    <a href="#" class="cta-btn" style="padding: 1.2rem 2.5rem;" onclick="showPage('services')">View Packages</a>
+                    <a href="https://wa.me/919000000000" class="cta-btn" style="background: transparent; border: 2px solid var(--white); padding: 1.2rem 2.5rem;">Chat with Experts</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="services-strip">
+            <div class="service-mini"><i class="ph ph-sparkle"></i><h4>Ceramic Coating</h4></div>
+            <div class="service-mini"><i class="ph ph-shield-check"></i><h4>PPF Protection</h4></div>
+            <div class="service-mini"><i class="ph ph-car-profile"></i><h4>Premium Detailing</h4></div>
+            <div class="service-mini"><i class="ph ph-speaker-hifi"></i><h4>Audio Systems</h4></div>
+            <div class="service-mini"><i class="ph ph-armchair"></i><h4>Seat Covers</h4></div>
+        </div>
+
+        <section id="before-after" class="reveal">
+            <div class="section-title">
+                <h2>The Transformation</h2>
+                <div class="line"></div>
+            </div>
+            <div class="ba-slider" id="main-slider">
+                <div class="ba-image ba-before"></div>
+                <div class="ba-image ba-after" id="after-img"></div>
+                <div class="ba-handle" id="handle"></div>
+                <div class="ba-label" style="position:absolute; top:20px; left:20px; z-index:10; background:rgba(0,0,0,0.5); color:white; padding:5px 15px; font-weight:800; font-size:0.7rem; text-transform:uppercase;">Before</div>
+                <div class="ba-label" style="position:absolute; top:20px; right:20px; z-index:10; background:var(--blue); color:white; padding:5px 15px; font-weight:800; font-size:0.7rem; text-transform:uppercase;">After</div>
+            </div>
+            <p style="text-align: center; margin-top: 3rem; color: var(--text-muted);">Real ceramic coating transformation on a BMW 5 Series at our Coimbatore Studio. Drag the slider to compare.</p>
+        </section>
+
+        <section id="popular" style="background: var(--light-grey);">
+            <div class="section-title">
+                <h2>Our Best Sellers</h2>
+                <div class="line"></div>
+            </div>
+            <div class="grid" id="featured-grid">
+                <!-- 6 cards -->
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="section-title">
+                <h2>Customer Stories</h2>
+                <div class="line"></div>
+            </div>
+            <div class="grid">
+                <div class="card" style="padding: 3rem; border: none; text-align: center;">
+                    <p style="font-style: italic; margin-bottom: 2rem;">"The ceramic coating job on my Fortuner was incredible. It's been 6 months and the water still beads off like new!"</p>
+                    <h4 class="bold">— Senthil Kumar, Toyota Fortuner</h4>
+                </div>
+                <div class="card" style="padding: 3rem; border: none; text-align: center;">
+                    <p style="font-style: italic; margin-bottom: 2rem;">"Best place in Coimbatore for seat covers. The fit and finish are better than OEM. Highly professional team."</p>
+                    <h4 class="bold">— Dr. Anitha, Honda City</h4>
+                </div>
+                <div class="card" style="padding: 3rem; border: none; text-align: center;">
+                    <p style="font-style: italic; margin-bottom: 2rem;">"Upgraded my Thar's music system here. The sound tuning is perfect. These guys really know their audio gear."</p>
+                    <h4 class="bold">— Karthik Raja, Mahindra Thar</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- --- SERVICES PAGE --- -->
+    <main id="services-page" class="page">
+        <section style="padding-top: 10rem;">
+            <div class="section-title">
+                <h2>Detailing Packages</h2>
+                <div class="line"></div>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1601362840469-51e4d8d59085?q=80&w=800&auto=format&fit=crop" alt="PPF"></div>
+                    <div class="card-info">
+                        <h3>Paint Protection Film (PPF)</h3>
+                        <p>Self-healing, ultra-glossy film to protect against scratches and stone chips. 5-10 years warranty.</p>
+                        <h4 style="color: var(--blue); margin-bottom: 2rem;">Starts from ₹45,000</h4>
+                        <a href="https://wa.me/919000000000?text=Inquiry for PPF" class="cta-btn" style="display: block; text-align: center;">Book Now</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1599256621730-535171e28e50?q=80&w=800&auto=format&fit=crop" alt="Ceramic"></div>
+                    <div class="card-info">
+                        <h3>9H Ceramic Coating</h3>
+                        <p>Multi-layer glass coating for extreme gloss and permanent paint protection. Includes paint correction.</p>
+                        <h4 style="color: var(--blue); margin-bottom: 2rem;">Starts from ₹18,000</h4>
+                        <a href="https://wa.me/919000000000?text=Inquiry for Ceramic Coating" class="cta-btn" style="display: block; text-align: center;">Book Now</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=800&auto=format&fit=crop" alt="Interior"></div>
+                    <div class="card-info">
+                        <h3>Interior Deep Cleaning</h3>
+                        <p>Steam cleaning, leather conditioning, and germ shielding for a showroom-fresh cabin.</p>
+                        <h4 style="color: var(--blue); margin-bottom: 2rem;">Starts from ₹3,500</h4>
+                        <a href="https://wa.me/919000000000?text=Inquiry for Interior Detailing" class="cta-btn" style="display: block; text-align: center;">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- --- PRODUCTS PAGE --- -->
+    <main id="products-page" class="page">
+        <section style="padding-top: 10rem;">
+            <div class="section-title">
+                <h2>Premium Accessories</h2>
+                <div class="line"></div>
+            </div>
+            <div class="grid" id="full-catalog-grid">
+                <!-- Accessories load here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- --- GALLERY PAGE --- -->
+    <main id="gallery-page" class="page">
+        <section style="padding-top: 10rem;">
+            <div class="section-title">
+                <h2>Our Recent Work</h2>
+                <div class="line"></div>
+            </div>
+            <div class="gallery-filters">
+                <button class="filter-btn active">All Work</button>
+                <button class="filter-btn">Detailing</button>
+                <button class="filter-btn">PPF / Coating</button>
+                <button class="filter-btn">Accessories</button>
+            </div>
+            <div class="grid" id="gallery-grid">
+                <!-- Gallery images load here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- --- CONTACT PAGE --- -->
+    <main id="contact-page" class="page">
+        <section style="padding-top: 10rem;">
+            <div class="section-title">
+                <h2>Get in Touch</h2>
+                <div class="line"></div>
+            </div>
+            <div class="ba-grid" style="align-items: start;">
+                <div style="background: #f9f9f9; padding: 4rem; border-radius: 10px;">
+                    <h3 style="margin-bottom: 2rem;">Book Appointment</h3>
+                    <form style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <input type="text" placeholder="Your Name" style="padding: 1rem; border: 1px solid #ddd; outline: none;">
+                        <input type="tel" placeholder="Mobile Number" style="padding: 1rem; border: 1px solid #ddd; outline: none;">
+                        <input type="text" placeholder="Car Model (e.g. Creta, Swift)" style="padding: 1rem; border: 1px solid #ddd; outline: none;">
+                        <select style="padding: 1rem; border: 1px solid #ddd; outline: none;">
+                            <option>Select Service</option>
+                            <option>Ceramic Coating</option>
+                            <option>PPF Protection</option>
+                            <option>Seat Covers</option>
+                            <option>Audio Upgrade</option>
+                        </select>
+                        <button type="submit" class="cta-btn">Send Booking Request</button>
+                    </form>
+                </div>
+                <div style="padding: 2rem;">
+                    <h4 style="margin-bottom: 1.5rem;">Our Studio</h4>
+                    <p style="margin-bottom: 2.5rem;">No. 204, Avinashi Road, Opposite PSG Tech,<br>Peelamedu, Coimbatore, Tamil Nadu 641004</p>
+                    
+                    <h4 style="margin-bottom: 1.5rem;">Working Hours</h4>
+                    <p style="margin-bottom: 2.5rem;">Mon - Sat: 9:00 AM - 8:30 PM<br>Sun: 10:00 AM - 5:00 PM</p>
+                    
+                    <h4 style="margin-bottom: 1.5rem;">Direct Contact</h4>
+                    <p style="margin-bottom: 2.5rem;">+91 90000 00000<br>info@autorefinecbe.in</p>
+                    
+                    <a href="https://wa.me/919000000000" class="cta-btn" style="display: block; text-align: center; background: #25D366;">WhatsApp Direct Chat</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo-text">AUTO<span>REFINE</span></div>
+                <p style="margin-top: 2rem; opacity: 0.6;">Your premium automotive enhancement partner in Coimbatore. Professional care for the cars you love.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('services')">PPF Protection</a></li>
+                    <li><a href="#" onclick="showPage('services')">Ceramic Coating</a></li>
+                    <li><a href="#" onclick="showPage('services')">Interior Detailing</a></li>
+                    <li><a href="#" onclick="showPage('services')">Paint Correction</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Accessories</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('products')">Seat Covers</a></li>
+                    <li><a href="#" onclick="showPage('products')">Audio Systems</a></li>
+                    <li><a href="#" onclick="showPage('products')">Ambient Lighting</a></li>
+                    <li><a href="#" onclick="showPage('products')">Dash Cameras</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div style="display: flex; gap: 1.5rem; font-size: 1.5rem; margin-top: 1rem;">
+                    <i class="ph ph-instagram-logo"></i>
+                    <i class="ph ph-facebook-logo"></i>
+                    <i class="ph ph-youtube-logo"></i>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 AutoRefine Coimbatore. Premium Craftsmanship by Antigravity.
+        </div>
+    </footer>
+
+    <script>
+        const items = [
+            { id: 1, name: "Premium Leather Seat Covers", type: "product", price: "Starting ₹12,500", img: "https://images.unsplash.com/photo-1542362567-b05500269734?q=80&w=800&auto=format&fit=crop" },
+            { id: 2, name: "Hi-Res Android Audio System", type: "product", price: "Starting ₹9,000", img: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=800&auto=format&fit=crop" },
+            { id: 3, name: "Nano Ceramic Coating", type: "service", price: "Starts ₹18,000", img: "https://images.unsplash.com/photo-1599256621730-535171e28e50?q=80&w=800&auto=format&fit=crop" },
+            { id: 4, name: "Self-Healing PPF", type: "service", price: "Starts ₹45,000", img: "https://images.unsplash.com/photo-1601362840469-51e4d8d59085?q=80&w=800&auto=format&fit=crop" },
+            { id: 5, name: "3D Custom Floor Mats", type: "product", price: "Starting ₹2,800", img: "https://images.unsplash.com/photo-1590615365405-6bc9f77d37dc?q=80&w=800&auto=format&fit=crop" },
+            { id: 6, name: "Ambient Interior Lighting", type: "product", price: "Starting ₹4,500", img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop" }
+        ];
+
+        function loadItems() {
+            const grid = document.getElementById('featured-grid');
+            const fullGrid = document.getElementById('full-catalog-grid');
+            const galleryGrid = document.getElementById('gallery-grid');
+            
+            const render = (arr) => arr.map(i => `
+                <div class="card">
+                    <div class="card-img">
+                        <img src="${i.img}" alt="${i.name}" onerror="this.src='https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=500';">
+                    </div>
+                    <div class="card-info">
+                        <h3>${i.name}</h3>
+                        <p>${i.price}</p>
+                        <a href="https://wa.me/919000000000?text=I'm interested in ${i.name}" class="cta-btn" style="display:block; text-align:center;">WhatsApp Price</a>
+                    </div>
+                </div>
+            `).join('');
+
+            if (grid) grid.innerHTML = render(items);
+            if (fullGrid) fullGrid.innerHTML = render(items);
+            if (galleryGrid) galleryGrid.innerHTML = render(items);
+        }
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId + '-page').classList.add('active');
+            window.scrollTo(0,0);
+        }
+
+        // --- Before/After Slider Logic ---
+        function initSlider() {
+            const slider = document.getElementById('main-slider');
+            const after = document.getElementById('after-img');
+            const handle = document.getElementById('handle');
+
+            if(!slider) return;
+
+            const move = (e) => {
+                let x = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+                let rect = slider.getBoundingClientRect();
+                let position = ((x - rect.left) / rect.width) * 100;
+                if (position < 0) position = 0;
+                if (position > 100) position = 100;
+                after.style.width = position + "%";
+                handle.style.left = position + "%";
+            };
+
+            slider.addEventListener('mousemove', move);
+            slider.addEventListener('touchmove', move);
+        }
+
+        // --- Reveal Logic ---
+        function initReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(r => observer.observe(r));
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadItems();
+            initSlider();
+            initReveal();
+        });
+    </script>
+</body>
+</html>
